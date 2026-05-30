@@ -43,15 +43,19 @@ async function signIn(event) {
             body: JSON.stringify(formData)
         })
         if (!response.ok) {
-            result.errors.forEach(error => {
-                let errorLine = document.createElement("li")
-                errorLine.innerHTML = error
-                errorList.appendChild(errorLine)
+            const errorData = await response.json();
 
+            console.log(errorData);
+
+            errorData.errors.forEach(error => {
+                let errorLine = document.createElement("li");
+                errorLine.textContent = error;
+                errorList.appendChild(errorLine);
             });
+
             return;
         }
-   
+
         const result = await response.json()
 
         localStorage.setItem("token", result.token)

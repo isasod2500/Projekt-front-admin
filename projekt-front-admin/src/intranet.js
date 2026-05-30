@@ -20,10 +20,19 @@ async function fetchEmployee() {
         });
 
         const data = await response.json();
+        console.log(data)
 
         const payload = JSON.parse(atob(token.split(".")[1]));
 
         document.getElementById("welcomeHeader").innerHTML = `Välkommen ${data.firstname} ${data.surname}`
+
+        const adminLink = document.getElementById("optionArticleAdmin")
+
+        /*if (data.admin === false) {
+            console.log(data.admin)
+            adminLink.style.display = "none"
+        }
+            */
     } catch (err) {
         console.log(err)
     }

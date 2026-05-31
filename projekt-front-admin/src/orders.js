@@ -4,24 +4,33 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 async function fetchOrders() {
+    let received = document.getElementById("received")
+    let pending = document.getElementById("pending")
+    let done = document.getElementById("done")
+    let pickedup = document.getElementById("pickedup")
 
+    /*
+    received.innerHTML = "";
+    pending.innerHTML = "";
+    done.innerHTML = "";
+    pickedup.innerHTML = "";
+    */
     try {
         let db = await fetch(`http://127.0.0.1:3000/order`)
         let result = await db.json()
 
         console.log(result)
 
-        let received = document.getElementById("received")
-        let pending = document.getElementById("pending")
-        let done = document.getElementById("done")
-        let pickedup = document.getElementById("pickedup")
+
 
         result.forEach(order => {
             let dishDiv = document.createElement("div")
             dishDiv.setAttribute("class", "dishDiv")
+            dishDiv.setAttribute("data-id", order._id)
 
             let dishes = document.createElement("div")
             dishes.setAttribute("class", "dishes")
+
             let orderId = document.createElement("h3")
             let contact = document.createElement("div")
             let cstmrName = document.createElement("h4")
@@ -37,8 +46,6 @@ async function fetchOrders() {
                 let dish = document.createElement("p")
                 dish.setAttribute("class", "orderDish")
                 dish.innerHTML = `${item.dishname} x${item.quantity} ${item.price}kr`
-
-
                 dishes.appendChild(dish)
             })
             dishDiv.appendChild(dishes)
@@ -76,6 +83,9 @@ async function fetchOrders() {
                 button.setAttribute("class", "markPending")
                 button.textContent = `Markera som Tillagas`
                 button.style.backgroundColor = "orange"
+                button.setAttribute("data-id", order._id)
+                button.addEventListener("click", orderPending)
+
                 dishDiv.appendChild(button)
 
             }
@@ -84,10 +94,15 @@ async function fetchOrders() {
                 pending.appendChild(dishDiv)
                 status.innerHTML = `Tillagas`
                 dishDiv.style.backgroundColor = "orange"
+
                 let button = document.createElement("button")
                 button.setAttribute("class", "markDone")
                 button.textContent = `Markera som klar`
                 button.style.backgroundColor = "lightgreen"
+                button.setAttribute("data-id", order._id)
+                button.addEventListener("click", orderDone)
+
+
                 dishDiv.appendChild(button)
 
             }
@@ -96,10 +111,14 @@ async function fetchOrders() {
                 done.appendChild(dishDiv)
                 status.innerHTML = `Färdig`
                 dishDiv.style.backgroundColor = "lightgreen"
+
                 let button = document.createElement("button")
                 button.setAttribute("class", "markPickedup")
                 button.textContent = `Markera som upphämtad`
                 button.style.backgroundColor = "pink"
+                button.setAttribute("data-id", order._id)
+                button.addEventListener("click", orderPickedup)
+
                 dishDiv.appendChild(button)
             }
 
@@ -116,4 +135,67 @@ async function fetchOrders() {
     } catch (err) {
         console.log(err)
     }
+}
+
+async function orderPending(event) {
+    event.preventDefault()
+    let pendingBtn = event.target
+
+    let dishId = pendingBtn.dataset.id
+
+    try {
+        let result = await fetch(`http://127.0.0.1:3000/order/${dishId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+
+    } catch (err) {
+        console.log(err)
+    }
+
+    fetchOrders()
+}
+
+async function orderDone(event) {
+    let doneBtn = event.target
+
+    let dishId = doneBtn.dataset.id
+    console.log(dishId)
+
+        try {
+        let result = await fetch(`http://127.0.0.1:3000/order/${dishId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+
+    } catch (err) {
+        console.log(err)
+    }
+
+    fetchOrders()
+}
+
+async function orderPickedup(event) {
+    let pickedupBtn = event.target
+
+    let dishId = pickedupBtn.dataset.id
+    console.log(dishId)
+
+        try {
+        let result = await fetch(`http://127.0.0.1:3000/order/${dishId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+
+    } catch (err) {
+        console.log(err)
+    }
+
+    fetchOrders()
 }

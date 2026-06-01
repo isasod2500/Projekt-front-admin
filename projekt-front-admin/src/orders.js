@@ -2,28 +2,26 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(`DOM LOADED`)
     fetchOrders()
 })
-
+//Hämtar in beställningar
 async function fetchOrders() {
+    //Sorterar upp dem efter status
     let received = document.getElementById("received")
     let pending = document.getElementById("pending")
     let done = document.getElementById("done")
     let pickedup = document.getElementById("pickedup")
 
-    /*
+    //Rensa lista vid varje fetch.
     received.innerHTML = "";
     pending.innerHTML = "";
     done.innerHTML = "";
     pickedup.innerHTML = "";
-    */
+
     try {
         let db = await fetch(`http://127.0.0.1:3000/order`)
         let result = await db.json()
 
-        console.log(result)
-
-
-
         result.forEach(order => {
+            //Skapa div där beställningarna ska in. Anger IDt från databasen på button och diven
             let dishDiv = document.createElement("div")
             dishDiv.setAttribute("class", "dishDiv")
             dishDiv.setAttribute("data-id", order._id)
@@ -74,6 +72,8 @@ async function fetchOrders() {
             status.setAttribute("class", "orderStatus")
             dishDiv.appendChild(status)
 
+            /*If-satser för att placera beställningarna beroende på stat
+            Knappar skapas och fylls med order-id, samt funktion för att flytta beställningar till nästa steg*/
             if (order.status === "received") {
                 received.appendChild(dishDiv)
                 status.innerHTML = `Mottagen`
@@ -123,13 +123,15 @@ async function fetchOrders() {
             }
 
             if (order.status === "picked-up") {
-                pickedup.appendChild(dishDiv)
-                status.innerHTML = `Upphämtad`
-                dishDiv.style.backgroundColor = "green"
-                dishDiv.style.color = "#edeeee"
+                const timePassed = checkTime(order)
+                if (timePassed === false) {
+                    pickedup.appendChild(dishDiv)
+                    status.innerHTML = `Upphämtad`
+                    dishDiv.style.backgroundColor = "green"
+                    dishDiv.style.color = "#edeeee"
+                }
+
             }
-
-
 
         })
     } catch (err) {
@@ -137,6 +139,7 @@ async function fetchOrders() {
     }
 }
 
+//Funktioner för att köra PUT till databasen och uppdatera status. Fetchorders körs direkt efter.
 async function orderPending(event) {
     event.preventDefault()
     let pendingBtn = event.target
@@ -164,7 +167,7 @@ async function orderDone(event) {
     let dishId = doneBtn.dataset.id
     console.log(dishId)
 
-        try {
+    try {
         let result = await fetch(`http://127.0.0.1:3000/order/${dishId}`, {
             method: "PUT",
             headers: {
@@ -185,7 +188,7 @@ async function orderPickedup(event) {
     let dishId = pickedupBtn.dataset.id
     console.log(dishId)
 
-        try {
+    try {
         let result = await fetch(`http://127.0.0.1:3000/order/${dishId}`, {
             method: "PUT",
             headers: {
@@ -198,4 +201,30 @@ async function orderPickedup(event) {
     }
 
     fetchOrders()
+}
+
+//Funktion för att räkna tid mellan hämttid och nuvarande tid.
+//Om statusen är picked-up och det har gått mer än 30 minuter sen hämttiden ska inte beställningen visas längre
+function checkTime(order) {
+
+    const now = new Date();
+
+    let orderTime = order.pickup
+
+    const [hours, minutes] = orderTime.split(":").map(Number);
+
+    const pickupTime = new Date();
+    pickupTime.setHours(hours, minutes, 0, 0)
+    console.log(pickupTime)
+
+    const timeDiff = now - pickupTime
+    const deadline = 30 * 60 * 1000;
+    let timePassed;
+
+    if (timeDiff >= deadline) {
+        timePassed = true
+    } else {
+        timePassed = false
+    }
+    return timePassed
 }

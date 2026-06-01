@@ -46,6 +46,14 @@ main {
     margin: 1rem;
   }
 
+  header {
+    width: 100%;
+  }
+
+  header a {
+    margin-left: 3rem;
+  }
+
   .indexInputWrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -242,6 +250,15 @@ main {
 
   #signIn>* {
     margin: 1rem;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  header a {
+    margin-left: 3rem;
+    font-size: 1.2em;
   }
 
   .indexInputWrapper {
@@ -452,6 +469,15 @@ main {
 
   #signIn>* {
     margin: 1rem;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  header a {
+    margin-left: 3rem;
+    font-size: 1.2em;
   }
 
   .indexInputWrapper {

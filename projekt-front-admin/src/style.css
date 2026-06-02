@@ -52,6 +52,11 @@ main {
 
   header a {
     margin-left: 3rem;
+    background-color: white;
+    color: black;
+    font-size: 1.2em;
+    padding: 0.5rem;
+    border-radius: 10px;
   }
 
   .indexInputWrapper {
@@ -179,6 +184,7 @@ main {
 
   #ordersMain {
     display: flex;
+    color: white;
   }
 
   #ordersMain h2,
@@ -189,17 +195,20 @@ main {
   #done {
     display: flex;
     flex-direction: column;
+    color: black;
   }
 
   #pending {
     display: flex;
     flex-direction: column;
+    color: black;
   }
 
   #received {
     display: flex;
     flex-direction: column;
     text-align: left;
+    color: black;
   }
 
   .dishDiv {
@@ -224,7 +233,94 @@ main {
     text-align: center;
   }
 
+  #addMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
 
+  #addMain article {
+    text-align: center;
+  }
+
+  #addMain h2 {
+    background-color: rgb(102, 102, 102);
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: white;
+  }
+
+  #addMain div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 1rem;
+  }
+
+  #addMain div p {
+    max-width: 30ch;
+  }
+
+  .dishWrapper {
+    background-color: #ffffffcc
+  }
+
+  .adminDishDiv {
+    align-items: center;
+    background-color: #ebebeb;
+  }
+
+  .changeBtn {
+    width: 75%;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #editMain {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  #editDish {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    align-items: center;
+  }
+
+  #editDish label {
+    margin: 1rem 0 0 1rem;
+  }
+
+  #editDish input,
+  select {
+    width: 75%;
+    margin: 0.5rem;
+    padding: 0.3rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #sendUpdate {
+    width: 50%;
+    background-color: #1e6252;
+    color: white;
+    font-size: 1.2em;
+    margin: 1rem 0 1rem 0;
+    padding: 0.5rem 0 0.5rem 0;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
@@ -258,7 +354,11 @@ main {
 
   header a {
     margin-left: 3rem;
+    background-color: white;
+    color: black;
     font-size: 1.2em;
+    padding: 0.5rem;
+    border-radius: 10px;
   }
 
   .indexInputWrapper {
@@ -383,7 +483,9 @@ main {
 
   #ordersMain {
     display: flex;
+    color: white;
   }
+
 
   #ordersMain h2,
   h3 {
@@ -395,6 +497,7 @@ main {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    color: black;
   }
 
   #pending {
@@ -402,6 +505,7 @@ main {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    color: black;
   }
 
   #received {
@@ -409,6 +513,7 @@ main {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    color: black;
   }
 
   #pickedup {
@@ -443,6 +548,59 @@ main {
 
   .orderContact {
     text-align: center;
+  }
+
+  #addMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  #addMain article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  #addMain div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 1rem;
+  }
+
+  #addMain div p {
+    max-width: 30ch;
+  }
+
+  #addMain h2 {
+    background-color: rgb(102, 102, 102);
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .dishWrapper {
+    background-color: #ffffffcc
+  }
+
+  .adminDishDiv {
+    align-items: center;
+    background-color: #ebebeb;
+  }
+
+  .changeBtn {
+    width: 75%;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
   }
 }
 
@@ -477,7 +635,11 @@ main {
 
   header a {
     margin-left: 3rem;
+    background-color: white;
+    color: black;
     font-size: 1.2em;
+    padding: 0.5rem;
+    border-radius: 10px;
   }
 
   .indexInputWrapper {
@@ -603,7 +765,9 @@ main {
 
   #ordersMain {
     display: flex;
+    color: white;
   }
+
 
   #ordersMain h2,
   h3 {
@@ -615,6 +779,7 @@ main {
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    color: black;
   }
 
   #pending {
@@ -622,6 +787,7 @@ main {
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    color: black;
   }
 
   #received {
@@ -629,6 +795,7 @@ main {
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    color: black;
   }
 
   #pickedup {
@@ -636,6 +803,7 @@ main {
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    color: black;
   }
 
   .dishDiv {
@@ -663,5 +831,65 @@ main {
 
   .orderContact {
     text-align: center;
+  }
+
+  #addMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  #addMain article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  #addMain div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 1rem;
+  }
+
+  #addMain div p {
+    max-width: 30ch;
+  }
+
+  #addMain h2 {
+    background-color: rgb(102, 102, 102);
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .dishWrapper {
+    background-color: #ffffffcc
+  }
+
+  .adminDishDiv {
+    align-items: center;
+    background-color: #ebebeb;
+  }
+
+
+
+  .changeBtn {
+    width: 75%;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #editDish {
+    display: flex;
+    flex-direction: column;
   }
 }

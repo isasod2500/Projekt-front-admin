@@ -1,10 +1,26 @@
 window.addEventListener("load", async () => {
 
-    fetchOrder()
+    await getAuthorised()
+    await fetchOrder()
     let sendUpdate = document.getElementById("sendUpdate")
     sendUpdate.addEventListener("click", updateQuery)
 
 })
+
+async function getAuthorised() {
+    const token = localStorage.getItem("token");
+
+    const response = await fetch("http://127.0.0.1:3000/", {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    }
+    )
+    const data = await response.json()
+
+    console.log(data)
+}
 
 async function fetchOrder() {
 
@@ -12,26 +28,33 @@ async function fetchOrder() {
     let id = params.get("id");
 
     try {
-        let db = await fetch(`http://127.0.0.1:3000/add/${id}`)
-        const result = await db.json()
-        console.log(result)
+        const token = localStorage.getItem("token")
+        let db = await fetch(`http://127.0.0.1:3000/add/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+    
+    
+    const result = await db.json()
+    console.log(result)
 
 
-        let dishnameInput = document.getElementById("dishname")
-        dishnameInput.value = result.dishname
+    let dishnameInput = document.getElementById("dishname")
+    dishnameInput.value = result.dishname
 
-        let ingredientsInput = document.getElementById("ingredients")
-        ingredientsInput.value = result.ingredients
+    let ingredientsInput = document.getElementById("ingredients")
+    ingredientsInput.value = result.ingredients
 
-        let allergensInput = document.getElementById("allergens")
-        allergensInput.value = result.allergens
+    let allergensInput = document.getElementById("allergens")
+    allergensInput.value = result.allergens
 
-        let priceInput = document.getElementById("price")
-        priceInput.value = result.price
+    let priceInput = document.getElementById("price")
+    priceInput.value = result.price
 
-    } catch (err) {
-        console.log(err)
-    }
+} catch (err) {
+    console.log(err)
+}
 }
 
 
@@ -78,7 +101,7 @@ async function updateQuery(event) {
         let result = await db.json();
 
         if (!db.ok) {
-            
+
             result.errors.forEach(error => {
                 let errorLine = document.createElement("li")
                 errorLine.innerHTML = error

@@ -1,15 +1,36 @@
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     console.log(`DOM loaded`)
 
-    fetchMenu()
+    await getAuthorised()
+    await fetchMenu()
 })
 
+async function getAuthorised() {
+    const token = localStorage.getItem("token");
+
+    const response = await fetch("http://127.0.0.1:3000/", {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    }
+    )
+    const data = await response.json()
+
+    console.log(data)
+}
 
 async function fetchMenu() {
 
     try {
-        let db = await fetch("http://127.0.0.1:3000/add")
+        const token = localStorage.getItem("token");
+        let db = await fetch("http://127.0.0.1:3000/add", {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
         let result = await db.json()
 
         let addMain = document.getElementById("addMain")
@@ -45,7 +66,7 @@ async function fetchMenu() {
             let dishDiet = document.createElement("p")
             let dishPrice = document.createElement("p")
             let dishImage;
-            let dishDay = document.createElement("h4")
+
 
             dishHeader.innerHTML = dish.dishname
             dishIngrdnts.innerHTML = `Ingredienser: ${dish.ingredients}`
@@ -63,39 +84,39 @@ async function fetchMenu() {
 
 
             if (dishWeekday == 1) {
-                dishDay.innerHTML = "Måndagar"
+
                 mondayDiv.appendChild(dishWrapper)
-                adminDishDiv.appendChild(dishDay)
+
                 dishWrapper.appendChild(adminDishDiv)
             } else if (dishWeekday == 2) {
-                dishDay.innerHTML = "Tisdagar"
+
                 tuesdayDiv.appendChild(dishWrapper)
-                adminDishDiv.appendChild(dishDay)
+
                 dishWrapper.appendChild(adminDishDiv)
             } else if (dishWeekday == 3) {
-                dishDay.innerHTML = "Onsdagar"
+
                 wednesdayDiv.appendChild(dishWrapper)
-                adminDishDiv.appendChild(dishDay)
+
                 dishWrapper.appendChild(adminDishDiv)
             } else if (dishWeekday == 4) {
-                dishDay.innerHTML = "Torsdagar"
+
                 thursdayDiv.appendChild(dishWrapper)
-                adminDishDiv.appendChild(dishDay)
+
                 dishWrapper.appendChild(adminDishDiv)
             } else if (dishWeekday == 5) {
-                dishDay.innerHTML = "Fredagar"
+
                 fridayDiv.appendChild(dishWrapper)
-                adminDishDiv.appendChild(dishDay)
+
                 dishWrapper.appendChild(adminDishDiv)
             } else if (dishWeekday == 6) {
-                dishDay.innerHTML = "Lördagar"
+
                 saturdayDiv.appendChild(dishWrapper)
-                adminDishDiv.appendChild(dishDay)
+
                 dishWrapper.appendChild(adminDishDiv)
             } else if (dishWeekday == 0) {
-                dishDay.innerHTML = "Söndagar"
+
                 sundayDiv.appendChild(dishWrapper)
-                adminDishDiv.appendChild(dishDay)
+
                 dishWrapper.appendChild(adminDishDiv)
             }
 
@@ -106,5 +127,5 @@ async function fetchMenu() {
 }
 
 async function changePage(id) {
-    window.location=`./edit.html?id=${id}`
+    window.location = `./edit.html?id=${id}`
 }

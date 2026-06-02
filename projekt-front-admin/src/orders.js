@@ -1,7 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     console.log(`DOM LOADED`)
-    fetchOrders()
+    await getAuthorised()
+    await fetchOrders()
 })
+
+async function getAuthorised() {
+    const token = localStorage.getItem("token");
+
+    const response = await fetch("http://127.0.0.1:3000/orders", {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    });
+
+    const data = await response.json()
+
+    if (!token) {
+        console.log(`Åtkomst nekad`)
+        return;
+    }
+}
 //Hämtar in beställningar
 async function fetchOrders() {
     //Sorterar upp dem efter status
@@ -17,7 +36,12 @@ async function fetchOrders() {
     pickedup.innerHTML = "";
 
     try {
-        let db = await fetch(`http://127.0.0.1:3000/order`)
+        const token = localStorage.getItem("token");
+        let db = await fetch(`http://127.0.0.1:3000/orders`, {
+            headers: {
+                Authorization: `Beared ${token}`
+            }
+        })
         let result = await db.json()
 
         result.forEach(order => {
@@ -147,7 +171,7 @@ async function orderPending(event) {
     let dishId = pendingBtn.dataset.id
 
     try {
-        let result = await fetch(`http://127.0.0.1:3000/order/${dishId}`, {
+        let result = await fetch(`http://127.0.0.1:3000/orders/${dishId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -165,10 +189,9 @@ async function orderDone(event) {
     let doneBtn = event.target
 
     let dishId = doneBtn.dataset.id
-    console.log(dishId)
 
     try {
-        let result = await fetch(`http://127.0.0.1:3000/order/${dishId}`, {
+        let result = await fetch(`http://127.0.0.1:3000/orders/${dishId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -186,10 +209,9 @@ async function orderPickedup(event) {
     let pickedupBtn = event.target
 
     let dishId = pickedupBtn.dataset.id
-    console.log(dishId)
 
     try {
-        let result = await fetch(`http://127.0.0.1:3000/order/${dishId}`, {
+        let result = await fetch(`http://127.0.0.1:3000/orders/${dishId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -215,7 +237,6 @@ function checkTime(order) {
 
     const pickupTime = new Date();
     pickupTime.setHours(hours, minutes, 0, 0)
-    console.log(pickupTime)
 
     const timeDiff = now - pickupTime
     const deadline = 30 * 60 * 1000;

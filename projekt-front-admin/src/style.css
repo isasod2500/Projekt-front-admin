@@ -246,10 +246,10 @@ main {
   }
 
   #addMain h2 {
-    background-color: rgb(102, 102, 102);
     padding: 0.5rem;
+    border: solid grey 1px;
     border-radius: 5px;
-    color: white;
+    background-color: #ffffffcc;
   }
 
   #addMain div {
@@ -294,6 +294,8 @@ main {
     flex-direction: column;
     width: 65%;
     align-items: center;
+    background-color: #cccccc;
+    border-radius: 5px;
   }
 
   #editDish label {
@@ -320,6 +322,78 @@ main {
     box-shadow: 1px 1px 3px #cccccc;
     border-radius: 5px;
     box-sizing: border-box;
+  }
+
+  #contactMain {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #contactHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  .contactWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+
+  }
+
+  .contactText {
+    text-align: left;
+  }
+
+  .contactWrapper>* {
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  .deleteBtn {
+    width: 75%;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: lightcoral;
+
+    margin-top: 2rem;
+  }
+
+  #reviewMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #reviewHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  .reviewWrapper>* {
+
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  .reviewWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+  }
+
+  .reviewDivider {
+    border-bottom: 2px solid white;
+    margin: 1rem;
+    width: 100%;
   }
 }
 
@@ -554,53 +628,174 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    justify-content: center;
   }
 
-  #addMain article {
+  #addMain section {
+    text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
-
-  #addMain div {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    border: 1px solid grey;
-    border-radius: 10px;
-    margin: 1rem;
-  }
-
-  #addMain div p {
-    max-width: 30ch;
   }
 
   #addMain h2 {
-    background-color: rgb(102, 102, 102);
     padding: 0.5rem;
+    border: solid grey 1px;
     border-radius: 5px;
-    color: white;
+    background-color: #ffffffcc;
   }
 
-  .dishWrapper {
-    background-color: #ffffffcc
+  #addMain div {
+
+    align-items: center;
+    margin: 1rem;
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    border: solid grey 1px;
   }
 
   .adminDishDiv {
-    align-items: center;
-    background-color: #ebebeb;
+    display: flex;
+    flex-direction: column;
+
+    width: 85%;
+
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+
+  .dishWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
   }
 
   .changeBtn {
     width: 75%;
-    margin: 0.5rem 0 1rem 0;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    padding: 0.5rem;
     box-shadow: 1px 1px 3px #cccccc;
     border-radius: 5px;
     box-sizing: border-box;
+
+    margin-top: auto;
+    margin-bottom: 1rem;
+  }
+
+  #editMain {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  #editDish {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    max-width: 600px;
+    align-items: center;
+    background-color: #cccccc;
+    border-radius: 5px;
+  }
+
+  #editDish label {
+    margin: 1rem 0 0 1rem;
+  }
+
+  #editDish input,
+  select {
+    width: 75%;
+    max-width: 450px;
+    margin: 0.5rem;
+    padding: 0.3rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #sendUpdate {
+    width: 50%;
+    max-width: 300px;
+    background-color: #1e6252;
+    color: white;
+    font-size: 1.2em;
+    margin: 1rem 0 1rem 0;
+    padding: 0.5rem 0 0.5rem 0;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #contactMain {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #contactHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  .contactWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+
+  }
+
+  .contactText {
+    text-align: left;
+  }
+
+  .contactWrapper>* {
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  .deleteBtn {
+    width: 75%;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: lightcoral;
+
+
+    margin-top: 2rem;
+  }
+
+
+  #reviewMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #reviewHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  .reviewWrapper>* {
+
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  .reviewWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+  }
+
+  .reviewDivider {
+    border-bottom: 2px solid white;
+    margin: 1rem;
+    width: 100%;
   }
 }
 
@@ -837,59 +1032,175 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    justify-content: center;
   }
 
-  #addMain article {
+  #addMain section {
+    text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
-
-  #addMain div {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    border: 1px solid grey;
-    border-radius: 10px;
-    margin: 1rem;
-  }
-
-  #addMain div p {
-    max-width: 30ch;
   }
 
   #addMain h2 {
-    background-color: rgb(102, 102, 102);
     padding: 0.5rem;
+    border: solid grey 1px;
     border-radius: 5px;
-    color: white;
+    background-color: #ffffffcc;
   }
 
-  .dishWrapper {
-    background-color: #ffffffcc
+  #addMain div {
+
+    align-items: center;
+    margin: 1rem;
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    border: solid grey 1px;
   }
 
   .adminDishDiv {
-    align-items: center;
-    background-color: #ebebeb;
+    display: flex;
+    flex-direction: column;
+
+    width: 350px;
+    height: 350px;
+
+    padding: 1rem;
+    box-sizing: border-box;
   }
 
 
+  .dishWrapper {
+    display: flex;
+    flex-direction: column;
+  }
 
   .changeBtn {
     width: 75%;
-    margin: 0.5rem 0 1rem 0;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    padding: 0.5rem;
     box-shadow: 1px 1px 3px #cccccc;
     border-radius: 5px;
     box-sizing: border-box;
+
+    margin-top: auto;
+    margin-bottom: 1rem;
+
+  }
+
+  #editMain {
+    display: flex;
+    flex-direction: column;
+
   }
 
   #editDish {
     display: flex;
     flex-direction: column;
+    width: 65%;
+    max-width: 600px;
+    align-items: center;
+    background-color: #cccccc;
+    border-radius: 5px;
+  }
+
+  #editDish label {
+    margin: 1rem 0 0 1rem;
+  }
+
+  #editDish input,
+  select {
+    width: 75%;
+    max-width: 450px;
+    margin: 0.5rem;
+    padding: 0.3rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #sendUpdate {
+    width: 50%;
+    max-width: 300px;
+    background-color: #1e6252;
+    color: white;
+    font-size: 1.2em;
+    margin: 1rem 0 1rem 0;
+    padding: 0.5rem 0 0.5rem 0;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+
+  #contactMain {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #contactHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  .contactWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+
+  }
+
+  .contactText {
+    text-align: left;
+  }
+
+  .contactWrapper>* {
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  .deleteBtn {
+    width: 75%;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: lightcoral;
+
+    margin-top: 2rem;
+  }
+
+
+  #reviewMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #reviewHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  .reviewWrapper>* {
+
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  .reviewWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+
+  }
+
+  .reviewDivider {
+    border-bottom: 2px solid white;
+    margin: 1rem;
+    width: 100%;
   }
 }

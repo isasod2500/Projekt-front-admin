@@ -1,7 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     console.log(`DOM Loaded`)
-    fetchEmployee()
+    await getAuthorised()
+    await fetchEmployee()
 })
+
+async function getAuthorised() {
+    const token = localStorage.getItem("token");
+
+    const response = await fetch("http://127.0.0.1:3000/orders", {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    });
+
+    const data = await response.json()
+
+    if (!token) {
+        console.log(`Åtkomst nekad`)
+        return;
+    }
+}
 
 async function fetchEmployee() {
     try {

@@ -1,24 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    await getAuthorised()
+  
     await fetchReviews()
 })
-
-
-async function getAuthorised() {
-    const token = localStorage.getItem("token");
-
-    const response = await fetch("http://127.0.0.1:3000/", {
-        method: "GET",
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
-    }
-    )
-    const data = await response.json()
-
-    console.log(data)
-}
-
 
 async function fetchReviews() {
 
@@ -65,9 +48,9 @@ async function fetchReviews() {
             reviewAnswer.setAttribute("class", "reviewAnswer")
 
             if (review.answer === true) {
-                reviewAnswer.innerHTML = `Kontakt: Ja`
+                reviewAnswer.innerHTML = `Kontakt tillåten: Ja`
             } else {
-                reviewAnswer.innerHTML = `Kontakt: Nej`
+                reviewAnswer.innerHTML = `Kontakt tillåten: Nej`
             }
 
             let reviewDivider = document.createElement("div")

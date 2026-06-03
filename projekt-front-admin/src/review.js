@@ -14,8 +14,10 @@ async function fetchReviews() {
             }
         });
 
+        if(!db.ok) {
+            window.location = `index.html`
+        }
         let result = await db.json()
-
 
         console.log(result)
 

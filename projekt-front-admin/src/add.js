@@ -1,25 +1,10 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
     console.log(`DOM loaded`)
-
-    await getAuthorised()
     await fetchMenu()
 })
 
-async function getAuthorised() {
-    const token = localStorage.getItem("token");
 
-    const response = await fetch("http://127.0.0.1:3000/", {
-        method: "GET",
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
-    }
-    )
-    const data = await response.json()
-
-    console.log(data)
-}
 
 async function fetchMenu() {
 
@@ -31,6 +16,11 @@ async function fetchMenu() {
                 Authorization: `Bearer ${token}`
             }
         })
+
+        //Om något är fel med token, gå tillbaka till index.
+        if (!db.ok) {
+            window.location = `index.html`
+        }
         let result = await db.json()
 
         let addMain = document.getElementById("addMain")

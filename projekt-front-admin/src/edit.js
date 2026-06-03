@@ -1,26 +1,11 @@
 window.addEventListener("load", async () => {
 
-    await getAuthorised()
     await fetchOrder()
     let sendUpdate = document.getElementById("sendUpdate")
     sendUpdate.addEventListener("click", updateQuery)
 
 })
 
-async function getAuthorised() {
-    const token = localStorage.getItem("token");
-
-    const response = await fetch("http://127.0.0.1:3000/", {
-        method: "GET",
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
-    }
-    )
-    const data = await response.json()
-
-    console.log(data)
-}
 
 async function fetchOrder() {
 
@@ -34,27 +19,31 @@ async function fetchOrder() {
                 Authorization: `Bearer ${token}`
             }
         })
-    
-    
-    const result = await db.json()
-    console.log(result)
+
+        //Om något är fel med token, gå tillbaka till index.
+        if (!db.ok) {
+            window.location = `index.html`
+        }
+
+        const result = await db.json()
+        console.log(result)
 
 
-    let dishnameInput = document.getElementById("dishname")
-    dishnameInput.value = result.dishname
+        let dishnameInput = document.getElementById("dishname")
+        dishnameInput.value = result.dishname
 
-    let ingredientsInput = document.getElementById("ingredients")
-    ingredientsInput.value = result.ingredients
+        let ingredientsInput = document.getElementById("ingredients")
+        ingredientsInput.value = result.ingredients
 
-    let allergensInput = document.getElementById("allergens")
-    allergensInput.value = result.allergens
+        let allergensInput = document.getElementById("allergens")
+        allergensInput.value = result.allergens
 
-    let priceInput = document.getElementById("price")
-    priceInput.value = result.price
+        let priceInput = document.getElementById("price")
+        priceInput.value = result.price
 
-} catch (err) {
-    console.log(err)
-}
+    } catch (err) {
+        console.log(err)
+    }
 }
 
 

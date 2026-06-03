@@ -31,6 +31,11 @@ async function fetchContact() {
         })
         let result = await db.json()
 
+        //Om något är fel med token, gå tillbaka till index.
+        if (!db.ok) {
+            window.location = `index.html`
+        }
+
         console.log(result)
         console.log(typeof result)
         console.log(Array.isArray(result));

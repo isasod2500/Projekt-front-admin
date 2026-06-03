@@ -14,15 +14,22 @@ async function fetchEmployees() {
             headers: {
                 Authorization: `Bearer ${token}`
             }
-        }
-        )
-        const result = await response.json()
+        })
 
-        console.log(result)
+        //Om något är fel med token, gå tillbaka till index.
+        if (!response.ok) {
+            window.location = `index.html`
+        }
+
+        console.log(token)
+        const result = await response.json()
+        const payload = JSON.parse(atob(token.split(".")[1]));
+        console.log(payload)
+        const resultArray = result.result
 
         const adminMain = document.getElementById("adminMain")
 
-        result.forEach(employee => {
+        resultArray.forEach(employee => {
             const employeeWrapper = document.createElement("div")
             employeeWrapper.setAttribute("class", "employeeWrapper")
 
@@ -46,7 +53,7 @@ async function fetchEmployees() {
             employeeUser.innerHTML = `Anv.namn: ${employee.username}`
 
             employeeEmail.innerHTML = `E-post: ${employee.email}`
-            if (employee.role == true) {
+            if (employee.admin == true) {
                 employeeRole.innerHTML = `Roll: Administratör`
             } else {
                 employeeRole.innerHTML = `Roll: Användare`

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./src/create.js"></script>
+  <link rel="stylesheet" href="./src/style.css">
+  <title>Skapa konto</title>
+</head>
+
+<body>
+  <img src="/images/highway.webp" alt="" id="heroImg" fetchpriority="high">
+  <header>
+    <nav>
+      <p><a href="admin.html">&larr; Tillbaka</a></p>
+    </nav>
+  </header>
+  <main>
+    <section id="createMain">
+        <h1 id="createHeader">Skapa medarbetare</h1>
+        <ul id="errorList">
+
+        </ul>
+        <form id="createForm">
+            <label for="firstname">Förnamn:</label>
+            <input type="text" name="firstname" id="firstname">
+            <label for="surname">Efternamn:</label>
+            <input type="text" name="surname" id="surname">
+            <label for="password">Lösenord:</label>
+            <input type="password" name="password" id="password">
+            <label for="confirmPassword">Bekräfta lösenord:</label>
+            <input type="password" name="confirmPassword" id="confirmPassword">
+            <label for="role">Användarroll</label>
+            <select id="role">
+                <option value="">-- Vänligen välj en roll --</option>
+                <option value="user">Användare</option>
+                <option value="admin">Administratör</option>
+            </select>
+            <p id="success"></p>
+        </form>
+        <div id="userPreview">
+            <h3>Förhandsvisning för konto</h3>
+            <p>Notera att IDt (siffrorna) slumpas av databasen vid skapande</p>
+            <p id="usernamePreview"></p>
+            <p id="emailPreview"></p>
+            <p id="rolePreview"></p>
+        </div>
+
+        <button id="createUser">Skapa användare</button>
+    </section>
+  </main>
+
+</body>
+
+</html>

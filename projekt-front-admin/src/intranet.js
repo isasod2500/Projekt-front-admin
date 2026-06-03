@@ -14,6 +14,11 @@ async function getAuthorised() {
         }
     });
 
+    //Om något är fel med token, gå tillbaka till index.
+    if (!response.ok) {
+        window.location = `index.html`
+    }
+
     const data = await response.json()
 
     if (!token) {

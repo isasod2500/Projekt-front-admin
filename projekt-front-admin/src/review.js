@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  
+
     await fetchReviews()
 })
 
 async function fetchReviews() {
 
+    reviewMain.innerHTML = "";
     try {
         const token = localStorage.getItem("token")
 
@@ -14,7 +15,7 @@ async function fetchReviews() {
             }
         });
 
-        if(!db.ok) {
+        if (!db.ok) {
             window.location = `index.html`
         }
         let result = await db.json()
@@ -59,13 +60,23 @@ async function fetchReviews() {
             reviewDivider.setAttribute("class", "reviewDivider")
 
 
+            let deleteBtn = document.createElement("button")
+            deleteBtn.addEventListener("click", () => {
+                deleteReview(review._id)
+            })
+            deleteBtn.setAttribute("class", "deleteBtn")
+            deleteBtn.style.backgroundColor = "lightred"
+            deleteBtn.textContent = `Radera recension`
+            deleteBtn.setAttribute("data-id", review._id)
+
+
             reviewWrapper.appendChild(reviewName)
             reviewWrapper.appendChild(reviewEmail)
             reviewWrapper.appendChild(reviewMsg)
             reviewWrapper.appendChild(reviewRating)
             reviewWrapper.appendChild(reviewSent)
             reviewWrapper.appendChild(reviewAnswer)
-
+            reviewWrapper.appendChild(deleteBtn)
 
             reviewMain.appendChild(reviewWrapper)
             reviewMain.appendChild(reviewDivider)
@@ -74,3 +85,21 @@ async function fetchReviews() {
         console.log(err)
     }
 }
+
+async function deleteReview(id) {
+    console.log(id)
+    try {
+        let db = await fetch(`http://127.0.0.1:3000/delete/review/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        });
+
+        const response = await db.json()
+
+        await fetchReviews()
+    } catch (err) {
+        console.log(err)
+    }
+}   

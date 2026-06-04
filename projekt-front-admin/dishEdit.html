@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="src/dishEdit.js"></script>
+  <link rel="stylesheet" href="src/style.css">
+  <title>Redigera rätt</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <p><a href="dishIndex.html">&larr; Tillbaka</a></p>
+    </nav>
+  </header>
+  <main id="editMain">
+    <h1>Redigera maträtt</h1>
+    <form id="editDish">
+      <ul id="errorList">
+
+      </ul>
+      <label for="dishname">Maträtt</label>
+      <input type="text" id="dishname" name="dishname">
+      <label for="ingredients">Ingredienser</label>
+      <input type="text" id="ingredients" name="ingredients">
+      <label for="allergens">Allergener</label>
+      <input type="text" id="allergens" name="allergens">
+      <label for="diet">Kosttyp</label>
+      <select id="diet">
+        <option value="">
+          -- Ange typ av maträtt --
+        </option>
+        <option value="Vegetarisk">
+          Vegetarisk
+        </option>
+        <option value="Vegansk">
+          Vegansk
+        </option>
+      </select>
+      <label for="price">Pris</label>
+      <input type="text" id="price" name="price">
+      <label for="weekday">Veckodag</label>
+      <select id="weekday">
+        <option value="">
+          -- Välj dag rätten ska serveras --
+        </option>
+        <option value="monday">
+          Måndag
+        </option>
+        <option value="tuesday">
+          Tisdag
+        </option>
+        <option value="wednesday">
+          Onsdag
+        </option>
+        <option value="thursday">
+          Torsdag
+        </option>
+        <option value="friday">
+          Fredag
+        </option>
+        <option value="saturday">
+          Lördag
+        </option>
+        <option value="sunday">
+          Söndag
+        </option>
+
+      </select>
+
+      <label for="image">Ladda upp bild</label>
+      <input type="file" id="image" name="image" accept="image/jpeg, image/png, image/gif, image/webp">
+      <button id="sendUpdate">Ändra rätt</button>
+    </form>
+  </main>
+</body>
+
+</html>

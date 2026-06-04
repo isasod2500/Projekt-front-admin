@@ -2,12 +2,23 @@
 document.addEventListener("DOMContentLoaded", async () => {
     console.log(`DOM loaded`)
     await fetchMenu()
+
+    document.getElementById("createDish").addEventListener("click", gotoAdd)
 })
 
-
+function gotoAdd() {
+    window.location.href = `./dishAdd.html`
+}
 
 async function fetchMenu() {
 
+    document.getElementById("monday").innerHTML = "";
+    document.getElementById("tuesday").innerHTML = "";
+    document.getElementById("wednesday").innerHTML = "";
+    document.getElementById("thursday").innerHTML = "";
+    document.getElementById("friday").innerHTML = "";
+    document.getElementById("saturday").innerHTML = "";
+    document.getElementById("sunday").innerHTML = "";
     try {
         const token = localStorage.getItem("token");
         let db = await fetch("http://127.0.0.1:3000/add", {
@@ -23,7 +34,7 @@ async function fetchMenu() {
         }
         let result = await db.json()
 
-        let addMain = document.getElementById("addMain")
+        let dishIndex = document.getElementById("dishIndex")
         let mondayDiv = document.getElementById("monday")
         let tuesdayDiv = document.getElementById("tuesday")
         let wednesdayDiv = document.getElementById("wednesday")
@@ -31,6 +42,7 @@ async function fetchMenu() {
         let fridayDiv = document.getElementById("friday")
         let saturdayDiv = document.getElementById("saturday")
         let sundayDiv = document.getElementById("sunday")
+
 
         console.log(result)
         result.forEach(dish => {
@@ -50,12 +62,21 @@ async function fetchMenu() {
             changeBtn.textContent = `Redigera rätt`
             changeBtn.setAttribute("data-id", dish._id)
 
+            let deleteBtn = document.createElement("button")
+            deleteBtn.addEventListener("click", () => {
+                deleteDish(dish._id)
+            })
+            deleteBtn.setAttribute("class", "deleteBtn")
+            deleteBtn.style.backgroundColor = "lightred"
+            deleteBtn.textContent = `Radera rätt`
+            deleteBtn.setAttribute("data-id", dish._id)
+
             let dishHeader = document.createElement("h3")
             let dishIngrdnts = document.createElement("p")
             let dishAlrgns = document.createElement("p")
             let dishDiet = document.createElement("p")
             let dishPrice = document.createElement("p")
-            let dishImage;
+
 
 
             dishHeader.innerHTML = dish.dishname
@@ -65,12 +86,20 @@ async function fetchMenu() {
             dishPrice.innerHTML = `Pris: ${dish.price}kr`
 
 
+
             adminDishDiv.appendChild(dishHeader)
+            if (dish.image) {
+                let dishImage = document.createElement("div")
+                dishImage.setAttribute("class", "dishImage")
+                dishImage.innerHTML += `<img src="${dish.image}">`
+                adminDishDiv.appendChild(dishImage)
+            }
             adminDishDiv.appendChild(dishIngrdnts)
             adminDishDiv.appendChild(dishAlrgns)
             adminDishDiv.appendChild(dishDiet)
             adminDishDiv.appendChild(dishPrice)
             adminDishDiv.appendChild(changeBtn)
+            adminDishDiv.appendChild(deleteBtn)
 
 
             if (dishWeekday == 1) {
@@ -117,5 +146,20 @@ async function fetchMenu() {
 }
 
 async function changePage(id) {
-    window.location = `./edit.html?id=${id}`
+    window.location = `./dishEdit.html?id=${id}`
+}
+
+async function deleteDish(id) {
+    console.log(id)
+
+    let db = await fetch(`http://127.0.0.1:3000/delete/dish/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    });
+
+    const response = await db.json()
+   
+    await fetchMenu()
 }

@@ -21,7 +21,7 @@ async function getAuthorised() {
 
 
 async function fetchContact() {
-
+    document.getElementById("contactMain").innerHTML = "";
     try {
         const token = localStorage.getItem("token")
         let db = await fetch("http://127.0.0.1:3000/contact", {
@@ -56,7 +56,11 @@ async function fetchContact() {
             contactMsg.setAttribute("class", "contactMsg")
 
             let deleteBtn = document.createElement("button")
+            deleteBtn.addEventListener("click", () => {
+                deleteContact(contact._id)
+            })
             deleteBtn.setAttribute("class", "deleteBtn")
+            deleteBtn.style.backgroundColor = "lightred"
             deleteBtn.textContent = `Radera meddelande`
             deleteBtn.setAttribute("data-id", contact._id)
 
@@ -78,4 +82,19 @@ async function fetchContact() {
     } catch (err) {
         console.log(err)
     }
+}
+
+async function deleteContact(id) {
+    console.log(id)
+
+    let db = await fetch(`http://127.0.0.1:3000/delete/contact/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    });
+
+    const response = await db.json()
+   
+    await fetchContact()
 }

@@ -65,26 +65,28 @@ async function updateQuery(event) {
     let ingredients = document.getElementById("ingredients").value
     let allergens = document.getElementById("allergens").value
     let diet = document.getElementById("diet").value
+    let image = document.getElementById("image").files[0];
     let price = document.getElementById("price").value
     let weekday = document.getElementById("weekday").value
 
 
-    let formData = {
-        dishname,
-        ingredients,
-        allergens,
-        diet,
-        price,
-        weekday
+    const formData = new FormData();
+
+    formData.append("dishname", dishname);
+    formData.append("ingredients", ingredients);
+    formData.append("allergens", allergens);
+    formData.append("diet", diet);
+    formData.append("price", price);
+    formData.append("weekday", weekday);
+
+    if (image) {
+        formData.append("image", image);
     }
 
     try {
         let db = await fetch(`http://127.0.0.1:3000/add/${id}`, {
             method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formData)
+            body: formData
         });
 
         let result = await db.json();
@@ -99,7 +101,7 @@ async function updateQuery(event) {
             return;
         }
 
-        window.location = `./add.html`
+        window.location = `./dishIndex.html`
     } catch (err) {
         console.log(err)
     }

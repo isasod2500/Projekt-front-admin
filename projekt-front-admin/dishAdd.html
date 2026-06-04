@@ -4,21 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="src/edit.js"></script>
+  <script src="src/dishAdd.js"></script>
   <link rel="stylesheet" href="src/style.css">
-  <title>Redigera rätt</title>
+  <title>Skapa rätt</title>
 </head>
 
 <body>
+  <img src="/images/highway.webp" alt="" id="heroImg" fetchpriority="high">
   <header>
     <nav>
-      <p><a href="add.html">&larr; Tillbaka</a></p>
+      <p><a href="dishIndex.html">&larr; Tillbaka</a></p>
     </nav>
   </header>
-  <main id="editMain">
-    <h1>Redigera maträtt</h1>
-    <form id="editDish">
-      <ul id="errorList">
+  <section id="dishCreateMain">
+    <h1>Lägg till maträtt</h1>
+    <form id="dishCreateForm">
+            <ul id="errorList">
 
       </ul>
       <label for="dishname">Maträtt</label>
@@ -46,33 +47,34 @@
         <option value="">
           -- Välj dag rätten ska serveras --
         </option>
-        <option value="monday">
+        <option value="Monday">
           Måndag
         </option>
-        <option value="tuesday">
+        <option value="Tuesday">
           Tisdag
         </option>
-        <option value="wednesday">
+        <option value="Wednesday">
           Onsdag
         </option>
-        <option value="thursday">
+        <option value="Thursday">
           Torsdag
         </option>
-        <option value="friday">
+        <option value="Friday">
           Fredag
         </option>
-        <option value="saturday">
+        <option value="Saturday">
           Lördag
         </option>
-        <option value="sunday">
+        <option value="Sunday">
           Söndag
         </option>
-
       </select>
+      <label for="image">Ladda upp bild</label>
+      <input type="file" id="image" name="image" accept="image/jpeg, image/png, image/gif, image/webp">
 
-      <button id="sendUpdate">Ändra rätt</button>
+      <button id="createDish">Skapa rätt</button>
     </form>
-  </main>
+  </section>
 </body>
 
 </html>

@@ -233,7 +233,7 @@ main {
     text-align: center;
   }
 
-  #addMain {
+  #dishIndex {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -241,28 +241,47 @@ main {
     justify-content: center;
   }
 
-  #addMain article {
+  #dishIndex article {
     text-align: center;
   }
 
-  #addMain h2 {
+  #dishIndex h2 {
     padding: 0.5rem;
     border: solid grey 1px;
     border-radius: 5px;
     background-color: #ffffffcc;
   }
 
-  #addMain div {
+  #dishIndex div {
     display: flex;
     flex-direction: column;
     text-align: center;
-    border: 1px solid grey;
+
     border-radius: 10px;
     margin: 1rem;
   }
 
-  #addMain div p {
+  #dishIndex div p {
     max-width: 30ch;
+  }
+
+  #buttonDiv {
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #ffffffcc;
+    width: 50%;
+  }
+
+  #createDish {
+    width: 100%;
+    margin: 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    background-color: #194f42;
+    color: white;
+    box-sizing: border-box;
+    max-width: 350px;
   }
 
   .dishWrapper {
@@ -272,6 +291,11 @@ main {
   .adminDishDiv {
     align-items: center;
     background-color: #ebebeb;
+  }
+
+  .dishImage {
+    width: 50%;
+    height: auto;
   }
 
   .changeBtn {
@@ -335,6 +359,12 @@ main {
     padding: 0.5rem;
   }
 
+  #contactDisclaimer {
+    background-color: #ffffffcc;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+
   .contactWrapper {
     display: flex;
     flex-direction: column;
@@ -394,6 +424,12 @@ main {
     border-bottom: 2px solid white;
     margin: 1rem;
     width: 100%;
+  }
+
+  #reviewDisclaimer {
+    background-color: #ffffffcc;
+    border-radius: 5px;
+    padding: 0.5rem;
   }
 
   #adminMain {
@@ -501,6 +537,37 @@ main {
     text-align: center;
     font-size: 1.2em;
     color: darkgreen;
+  }
+
+  #dishCreateMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #dishCreateForm {
+    padding: 1rem;
+    background-color: #ffffffcc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    width: 75%;
+  }
+
+  #dishCreateForm input {
+    width: 10rem;
+    padding: 0.5rem;
+    box-shadow: inset 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+  }
+
+  #dishCreateMain h1 {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
   }
 }
 
@@ -731,32 +798,45 @@ main {
     text-align: center;
   }
 
-  #addMain {
+  #dishIndex {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  #addMain section {
+  #dishIndex section {
     text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 
-  #addMain h2 {
+  #dishIndex h2 {
     padding: 0.5rem;
     border: solid grey 1px;
     border-radius: 5px;
     background-color: #ffffffcc;
   }
 
-  #addMain div {
+  #dishIndex div {
 
     align-items: center;
     margin: 1rem;
     background-color: #ffffffcc;
     border-radius: 10px;
-    border: solid grey 1px;
+
+  }
+
+  .dishImage {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .dishImage img {
+    border: none;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
   }
 
   .adminDishDiv {
@@ -767,6 +847,29 @@ main {
 
     padding: 1rem;
     box-sizing: border-box;
+  }
+
+  #buttonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #ffffffcc;
+    width: 50%;
+  }
+
+  #createDish {
+    width: 100%;
+    margin: 1rem;
+    font-size: 1.2em;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    background-color: #194f42;
+    color: white;
+    box-sizing: border-box;
+    max-width: 50%;
+    max-width: 350px;
   }
 
 
@@ -839,6 +942,12 @@ main {
   #contactHeader {
     background-color: #ffffffcc;
     border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  #contactDisclaimer {
+    background-color: #ffffffcc;
+    border-radius: 5px;
     padding: 0.5rem;
   }
 
@@ -1025,6 +1134,37 @@ main {
     text-align: center;
     font-size: 1.2em;
     color: darkgreen;
+  }
+
+  #dishCreateMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #dishCreateForm {
+    padding: 1rem;
+    background-color: #ffffffcc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    width: 75%;
+  }
+
+  #dishCreateForm input {
+    width: 10rem;
+    padding: 0.5rem;
+    box-shadow: inset 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+  }
+
+  #dishCreateMain h1 {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
   }
 }
 
@@ -1257,32 +1397,32 @@ main {
     text-align: center;
   }
 
-  #addMain {
+  #dishIndex {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  #addMain section {
+  #dishIndex section {
     text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 
-  #addMain h2 {
+  #dishIndex h2 {
     padding: 0.5rem;
     border: solid grey 1px;
     border-radius: 5px;
     background-color: #ffffffcc;
   }
 
-  #addMain div {
+  #dishIndex div {
 
     align-items: center;
     margin: 1rem;
     background-color: #ffffffcc;
     border-radius: 10px;
-    border: solid grey 1px;
+
   }
 
   .adminDishDiv {
@@ -1290,10 +1430,76 @@ main {
     flex-direction: column;
 
     width: 350px;
-    height: 350px;
+
 
     padding: 1rem;
     box-sizing: border-box;
+  }
+
+  .dishImage {
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .dishImage img {
+    border: none;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  #buttonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #ffffffcc;
+    width: 50%;
+  }
+
+  #createDish {
+    width: 100%;
+    margin: 1rem;
+    font-size: 1.2em;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    background-color: #194f42;
+    color: white;
+    box-sizing: border-box;
+    max-width: 350px;
+  }
+
+  #dishCreateMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #dishCreateForm {
+    padding: 1rem;
+    background-color: #ffffffcc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    width: 75%;
+  }
+
+  #dishCreateForm input {
+    width: 10rem;
+    padding: 0.5rem;
+    box-shadow: inset 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+  }
+
+  #dishCreateMain h1 {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
   }
 
 
@@ -1367,6 +1573,12 @@ main {
   #contactHeader {
     background-color: #ffffffcc;
     border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  #contactDisclaimer {
+    background-color: #ffffffcc;
+    border-radius: 5px;
     padding: 0.5rem;
   }
 

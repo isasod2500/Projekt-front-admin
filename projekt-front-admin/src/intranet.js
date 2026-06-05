@@ -12,7 +12,7 @@ async function fetchEmployee() {
             return;
         }
         
-        const response = await fetch("https://projekt-backend-s1gd.onrender.com/admin", {
+        const response = await fetch("https://projekt-backend-s1gd.onrender.com/intranet", {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`

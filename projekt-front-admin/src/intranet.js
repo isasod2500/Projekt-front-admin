@@ -33,11 +33,10 @@ async function fetchEmployee() {
 
         const adminLink = document.getElementById("optionArticleAdmin")
 
-        /*if (data.admin === false) {
-            console.log(data.admin)
+        if (data.admin === false) {
             adminLink.style.display = "none"
         }
-            */
+            
     } catch (err) {
         console.log(err)
     }

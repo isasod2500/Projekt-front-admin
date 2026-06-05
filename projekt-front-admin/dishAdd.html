@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="src/dishAdd.js"></script>
+  <link rel="stylesheet" href="src/style.css">
+  <title>Skapa rätt</title>
+</head>
+
+<body>
+  <img src="/images/highway.webp" alt="" id="heroImg" fetchpriority="high">
+  <header>
+    <nav>
+      <p><a href="dishIndex.html">&larr; Tillbaka</a></p>
+    </nav>
+  </header>
+  <section id="dishCreateMain">
+    <h1>Lägg till maträtt</h1>
+    <form id="dishCreateForm">
+            <ul id="errorList">
+
+      </ul>
+      <label for="dishname">Maträtt</label>
+      <input type="text" id="dishname" name="dishname">
+      <label for="ingredients">Ingredienser</label>
+      <input type="text" id="ingredients" name="ingredients">
+      <label for="allergens">Allergener</label>
+      <input type="text" id="allergens" name="allergens">
+      <label for="diet">Kosttyp</label>
+      <select id="diet">
+        <option value="">
+          -- Ange typ av maträtt --
+        </option>
+        <option value="Vegetarisk">
+          Vegetarisk
+        </option>
+        <option value="Vegansk">
+          Vegansk
+        </option>
+      </select>
+      <label for="price">Pris</label>
+      <input type="text" id="price" name="price">
+      <label for="weekday">Veckodag</label>
+      <select id="weekday">
+        <option value="">
+          -- Välj dag rätten ska serveras --
+        </option>
+        <option value="Monday">
+          Måndag
+        </option>
+        <option value="Tuesday">
+          Tisdag
+        </option>
+        <option value="Wednesday">
+          Onsdag
+        </option>
+        <option value="Thursday">
+          Torsdag
+        </option>
+        <option value="Friday">
+          Fredag
+        </option>
+        <option value="Saturday">
+          Lördag
+        </option>
+        <option value="Sunday">
+          Söndag
+        </option>
+      </select>
+      <label for="image">Ladda upp bild</label>
+      <input type="file" id="image" name="image" accept="image/jpeg, image/png, image/gif, image/webp">
+
+      <button id="createDish">Skapa rätt</button>
+    </form>
+  </section>
+</body>
+
+</html>

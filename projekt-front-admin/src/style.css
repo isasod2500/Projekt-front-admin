@@ -30,7 +30,8 @@ main {
   }
 
   #signIn {
-    width: 60%;
+    width: 45%;
+    min-width: 300px;
     height: 65%;
     display: flex;
     flex-direction: column;
@@ -43,6 +44,19 @@ main {
 
   #signIn>* {
     margin: 1rem;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  header a {
+    margin-left: 3rem;
+    background-color: white;
+    color: black;
+    font-size: 1.2em;
+    padding: 0.5rem;
+    border-radius: 10px;
   }
 
   .indexInputWrapper {
@@ -83,9 +97,1673 @@ main {
     background-color: #cccccc;
   }
 
+  #errorList {
+    color: darkred;
+    list-style: none;
+    margin: 0;
+    padding-inline-start: 0;
+    max-width: 35ch;
+    padding: 0.5rem;
+  }
 
+
+  #intranetMain {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+
+  #intranetOptions {
+    background-color: #ffffffee;
+    border-radius: 15px;
+    width: 75%;
+    max-width: 500px;
+  }
+
+
+  #optionsList {
+    list-style: none;
+    text-align: left;
+  }
+
+  #options>* {
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+
+  .optionArticle a {
+    color: black;
+    background-color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .optionArticle a:hover {
+    text-decoration: underline;
+    background-color: #fdfdfd;
+  }
+
+  .optionArticle a:active {
+    background-color: #cccccc;
+  }
+
+  #optionArticleAdmin {
+    border-top: 1px solid grey;
+    padding: 1rem 0.5rem 0.5rem;
+  }
+
+  #optionArticleAdmin a {
+    color: black;
+    background-color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #optionArticleAdmin a:hover {
+    text-decoration: underline;
+    background-color: #fdfdfd;
+  }
+
+  #optionArticleAdmin a:active {
+    background-color: #cccccc;
+  }
+
+  #ordersMain {
+    display: flex;
+    color: white;
+  }
+
+  #ordersMain h2,
+  h3 {
+    text-align: center;
+  }
+
+  #done {
+    display: flex;
+    flex-direction: column;
+    color: black;
+  }
+
+  #pending {
+    display: flex;
+    flex-direction: column;
+    color: black;
+  }
+
+  #received {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: black;
+  }
+
+  .dishDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid grey;
+    border-radius: 15px;
+  }
+
+  .dishDiv button {
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .orderContact {
+    text-align: center;
+  }
+
+  #dishIndex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  #dishIndex article {
+    text-align: center;
+  }
+
+  #dishIndex h2 {
+    padding: 0.5rem;
+    border: solid grey 1px;
+    border-radius: 5px;
+    background-color: #ffffffcc;
+  }
+
+  #dishIndex div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    border-radius: 10px;
+    margin: 1rem;
+  }
+
+  #dishIndex div p {
+    max-width: 30ch;
+  }
+
+  #buttonDiv {
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #ffffffcc;
+    width: 50%;
+  }
+
+  #createDish {
+    width: 100%;
+    margin: 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    background-color: #194f42;
+    color: white;
+    box-sizing: border-box;
+    max-width: 350px;
+  }
+
+  .dishWrapper {
+    background-color: #ffffffcc
+  }
+
+  .adminDishDiv {
+    align-items: center;
+    background-color: #ebebeb;
+  }
+
+  .dishImage {
+    width: 50%;
+    height: auto;
+  }
+
+  .changeBtn {
+    width: 75%;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #editMain {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  #editDish {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    align-items: center;
+    background-color: #cccccc;
+    border-radius: 5px;
+  }
+
+  #editDish label {
+    margin: 1rem 0 0 1rem;
+  }
+
+  #editDish input,
+  select {
+    width: 75%;
+    margin: 0.5rem;
+    padding: 0.3rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #sendUpdate {
+    width: 50%;
+    background-color: #1e6252;
+    color: white;
+    font-size: 1.2em;
+    margin: 1rem 0 1rem 0;
+    padding: 0.5rem 0 0.5rem 0;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #contactMain {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #contactHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  #contactDisclaimer {
+    background-color: #ffffffcc;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+
+  .contactWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+
+  }
+
+  .contactText {
+    text-align: left;
+  }
+
+  .contactWrapper>* {
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  .deleteBtn {
+    width: 75%;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: lightcoral;
+
+    margin-top: 2rem;
+  }
+
+  #reviewMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #reviewHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  .reviewWrapper>* {
+
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  .reviewWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+  }
+
+  .reviewDivider {
+    border-bottom: 2px solid white;
+    margin: 1rem;
+    width: 100%;
+  }
+
+  #reviewDisclaimer {
+    background-color: #ffffffcc;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+
+  #adminMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #adminHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  .employeeWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+  }
+
+  .employeeWrapper>* {
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  #createLink {
+    text-align: center;
+    padding: 0.5rem;
+    text-decoration: none;
+    width: 50%;
+    background-color: #1e6252;
+    color: white;
+    font-size: 1.2em;
+    box-shadow: 1px 1px 3px #000000;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #createLink:hover {
+    text-decoration: underline;
+    background-color: #194f42;
+  }
+
+  #createLink:active {
+    text-decoration: underline;
+    background-color: #1e6252
+  }
+
+  #createMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #createHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  #createForm {
+    padding: 1rem;
+    background-color: #ffffffcc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    width: 75%;
+  }
+
+  #createForm input {
+    margin-bottom: 1rem;
+    width: 75%;
+  }
+
+  #userPreview {
+    background-color: #ffffffcc;
+    border-radius: 5px;
+    margin: 1rem;
+    text-align: center;
+  }
+
+  #userPreview>* {
+    padding: 0 0.5rem 0 0.5rem;
+  }
+
+  #errorList {
+    margin: 1rem;
+    border-radius: 5px;
+  }
+
+  #createUser {
+    padding: 1rem;
+    margin: 0.5rem 0 2rem 0;
+    background-color: rgb(87, 229, 132);
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 75%;
+  }
+
+  #success {
+    text-align: center;
+    font-size: 1.2em;
+    color: darkgreen;
+  }
+
+  #dishCreateMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #dishCreateForm {
+    padding: 1rem;
+    background-color: #ffffffcc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    width: 75%;
+  }
+
+  #dishCreateForm input {
+    width: 10rem;
+    padding: 0.5rem;
+    box-shadow: inset 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+  }
+
+  #dishCreateMain h1 {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 1200px) {}
+@media (min-width: 768px) and (max-width: 1200px) {
+  #indexMain {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-@media (min-width: 1200px) {}
+  #signIn {
+    width: 45%;
+    max-width: 500px;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #ffffffee;
+    font-size: 1.2em;
+  }
+
+  #signIn>* {
+    margin: 1rem;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  header a {
+    margin-left: 3rem;
+    background-color: white;
+    color: black;
+    font-size: 1.2em;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+
+  .indexInputWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    width: 50%;
+    margin-top: 1rem;
+  }
+
+  .indexInputWrapper label {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  .indexInputWrapper input {
+    grid-area: 2 / 1 / 3 / 3
+  }
+
+  #loginBtn {
+    width: 45%;
+    max-width: 300px;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #loginBtn:hover {
+    background-color: #fdfdfd;
+  }
+
+  #loginBtn:active {
+    background-color: #cccccc;
+  }
+
+  #errorList {
+    color: darkred;
+    list-style: none;
+    margin: 0;
+    padding-inline-start: 0;
+    max-width: 35ch;
+    padding: 0.5rem;
+  }
+
+
+
+  #intranetMain {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+
+  #intranetOptions {
+    background-color: #ffffffee;
+    border-radius: 15px;
+    width: 75%;
+    max-width: 500px;
+  }
+
+
+  #optionsList {
+    list-style: none;
+    text-align: left;
+  }
+
+  #options>* {
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+
+  .optionArticle a {
+    color: black;
+    background-color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .optionArticle a:hover {
+    text-decoration: underline;
+  }
+
+  #optionArticleAdmin {
+    border-top: 1px solid grey;
+    padding: 1rem 0.5rem 0.5rem;
+  }
+
+  #optionArticleAdmin a {
+    color: black;
+    background-color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #optionArticleAdmin a:hover {
+    text-decoration: underline;
+    background-color: #fdfdfd;
+  }
+
+  #optionArticleAdmin a:active {
+    background-color: #cccccc;
+  }
+
+  #ordersMain {
+    display: flex;
+    color: white;
+  }
+
+
+  #ordersMain h2,
+  h3 {
+    text-align: center;
+  }
+
+  #done {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    color: black;
+  }
+
+  #pending {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    color: black;
+  }
+
+  #received {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    color: black;
+  }
+
+  #pickedup {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .dishDiv {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid grey;
+    border-radius: 15px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .dishes {
+    flex: 1;
+  }
+
+  .dishDiv button {
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .orderContact {
+    text-align: center;
+  }
+
+  #dishIndex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #dishIndex section {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #dishIndex h2 {
+    padding: 0.5rem;
+    border: solid grey 1px;
+    border-radius: 5px;
+    background-color: #ffffffcc;
+  }
+
+  #dishIndex div {
+
+    align-items: center;
+    margin: 1rem;
+    background-color: #ffffffcc;
+    border-radius: 10px;
+
+  }
+
+  .dishImage {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .dishImage img {
+    border: none;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  .adminDishDiv {
+    display: flex;
+    flex-direction: column;
+
+    width: 85%;
+
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  #buttonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #ffffffcc;
+    width: 50%;
+  }
+
+  #createDish {
+    width: 100%;
+    margin: 1rem;
+    font-size: 1.2em;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    background-color: #194f42;
+    color: white;
+    box-sizing: border-box;
+    max-width: 50%;
+    max-width: 350px;
+  }
+
+
+  .dishWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+  }
+
+  .changeBtn {
+    width: 75%;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    margin-top: auto;
+    margin-bottom: 1rem;
+  }
+
+  #editMain {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  #editDish {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    max-width: 600px;
+    align-items: center;
+    background-color: #cccccc;
+    border-radius: 5px;
+  }
+
+  #editDish label {
+    margin: 1rem 0 0 1rem;
+  }
+
+  #editDish input,
+  select {
+    width: 75%;
+    max-width: 450px;
+    margin: 0.5rem;
+    padding: 0.3rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #sendUpdate {
+    width: 50%;
+    max-width: 300px;
+    background-color: #1e6252;
+    color: white;
+    font-size: 1.2em;
+    margin: 1rem 0 1rem 0;
+    padding: 0.5rem 0 0.5rem 0;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #contactMain {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #contactHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  #contactDisclaimer {
+    background-color: #ffffffcc;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+
+  .contactWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+
+  }
+
+  .contactText {
+    text-align: left;
+  }
+
+  .contactWrapper>* {
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  .deleteBtn {
+    width: 75%;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: lightcoral;
+
+
+    margin-top: 2rem;
+  }
+
+
+  #reviewMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #reviewHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  .reviewWrapper>* {
+
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  .reviewWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+  }
+
+  .reviewDivider {
+    border-bottom: 2px solid white;
+    margin: 1rem;
+    width: 100%;
+  }
+
+  #adminMain {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .employeeWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+  }
+
+  .employeeWrapper>* {
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  #adminHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  .employeeWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+  }
+
+  .employeeWrapper>* {
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  #createLink {
+    text-align: center;
+    padding: 0.5rem;
+    text-decoration: none;
+    width: 50%;
+    background-color: #1e6252;
+    color: white;
+    font-size: 1.2em;
+    box-shadow: 1px 1px 3px #000000;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #createLink:hover {
+    text-decoration: underline;
+    background-color: #194f42;
+  }
+
+  #createLink:active {
+    text-decoration: underline;
+    background-color: #1e6252
+  }
+
+  #createMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #createHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  #createForm {
+    padding: 1rem;
+    background-color: #ffffffcc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    width: 75%;
+  }
+
+  #createForm input {
+    margin-bottom: 1rem;
+    width: 75%;
+  }
+
+  #userPreview {
+    background-color: #ffffffcc;
+    border-radius: 5px;
+    margin: 1rem;
+    text-align: center;
+  }
+
+  #userPreview>* {
+    padding: 0 0.5rem 0 0.5rem;
+  }
+
+  #errorList {
+    margin: 1rem;
+    border-radius: 5px;
+  }
+
+  #createUser {
+    padding: 1rem;
+    margin: 0.5rem 0 2rem 0;
+    background-color: rgb(87, 229, 132);
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 75%;
+  }
+
+  #success {
+    text-align: center;
+    font-size: 1.2em;
+    color: darkgreen;
+  }
+
+  #dishCreateMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #dishCreateForm {
+    padding: 1rem;
+    background-color: #ffffffcc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    width: 75%;
+  }
+
+  #dishCreateForm input {
+    width: 10rem;
+    padding: 0.5rem;
+    box-shadow: inset 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+  }
+
+  #dishCreateMain h1 {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  #indexMain {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #signIn {
+    width: 45%;
+    max-width: 500px;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #ffffffee;
+    font-size: 1.2em;
+  }
+
+  #signIn>* {
+    margin: 1rem;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  header a {
+    margin-left: 3rem;
+    background-color: white;
+    color: black;
+    font-size: 1.2em;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+
+  .indexInputWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    width: 50%;
+    margin-top: 1rem;
+  }
+
+  .indexInputWrapper label {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  .indexInputWrapper input {
+    grid-area: 2 / 1 / 3 / 3
+  }
+
+  #loginBtn {
+    width: 45%;
+    max-width: 300px;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #loginBtn:hover {
+    background-color: #fdfdfd;
+  }
+
+  #loginBtn:active {
+    background-color: #cccccc;
+  }
+
+  #errorList {
+    color: darkred;
+    list-style: none;
+    margin: 0;
+    padding-inline-start: 0;
+    max-width: 35ch;
+    padding: 0.5rem;
+  }
+
+
+
+  #intranetMain {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+
+  #intranetOptions {
+    background-color: #ffffffee;
+    border-radius: 15px;
+    width: 75%;
+    max-width: 500px;
+  }
+
+
+
+  #optionsList {
+    list-style: none;
+    text-align: left;
+  }
+
+  #options>* {
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+
+  .optionArticle a {
+    color: black;
+    background-color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .optionArticle a:hover {
+    text-decoration: underline;
+  }
+
+  #optionArticleAdmin {
+    border-top: 1px solid grey;
+    padding: 1rem 0.5rem 0.5rem;
+  }
+
+  #optionArticleAdmin a {
+    color: black;
+    background-color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #optionArticleAdmin a:hover {
+    text-decoration: underline;
+    background-color: #fdfdfd;
+  }
+
+  #optionArticleAdmin a:active {
+    background-color: #cccccc;
+  }
+
+  #ordersMain {
+    display: flex;
+    color: white;
+  }
+
+
+  #ordersMain h2,
+  h3 {
+    text-align: center;
+  }
+
+  #done {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    color: black;
+  }
+
+  #pending {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    color: black;
+  }
+
+  #received {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    color: black;
+  }
+
+  #pickedup {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    color: black;
+  }
+
+  .dishDiv {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid grey;
+    border-radius: 15px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .dishes {
+    flex: 1;
+  }
+
+  .dishDiv button {
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .orderContact {
+    text-align: center;
+  }
+
+  #dishIndex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #dishIndex section {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #dishIndex h2 {
+    padding: 0.5rem;
+    border: solid grey 1px;
+    border-radius: 5px;
+    background-color: #ffffffcc;
+  }
+
+  #dishIndex div {
+
+    align-items: center;
+    margin: 1rem;
+    background-color: #ffffffcc;
+    border-radius: 10px;
+
+  }
+
+  .adminDishDiv {
+    display: flex;
+    flex-direction: column;
+
+    width: 350px;
+
+
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .dishImage {
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .dishImage img {
+    border: none;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  #buttonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #ffffffcc;
+    width: 50%;
+  }
+
+  #createDish {
+    width: 100%;
+    margin: 1rem;
+    font-size: 1.2em;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    background-color: #194f42;
+    color: white;
+    box-sizing: border-box;
+    max-width: 350px;
+  }
+
+  #dishCreateMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #dishCreateForm {
+    padding: 1rem;
+    background-color: #ffffffcc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    width: 75%;
+  }
+
+  #dishCreateForm input {
+    width: 10rem;
+    padding: 0.5rem;
+    box-shadow: inset 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+  }
+
+  #dishCreateMain h1 {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+
+  .dishWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .changeBtn {
+    width: 75%;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    margin-top: auto;
+    margin-bottom: 1rem;
+
+  }
+
+  #editMain {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  #editDish {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    max-width: 600px;
+    align-items: center;
+    background-color: #cccccc;
+    border-radius: 5px;
+  }
+
+  #editDish label {
+    margin: 1rem 0 0 1rem;
+  }
+
+  #editDish input,
+  select {
+    width: 75%;
+    max-width: 450px;
+    margin: 0.5rem;
+    padding: 0.3rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #sendUpdate {
+    width: 50%;
+    max-width: 300px;
+    background-color: #1e6252;
+    color: white;
+    font-size: 1.2em;
+    margin: 1rem 0 1rem 0;
+    padding: 0.5rem 0 0.5rem 0;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+
+  #contactMain {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #contactHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  #contactDisclaimer {
+    background-color: #ffffffcc;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+
+  .contactWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+
+  }
+
+  .contactText {
+    text-align: left;
+  }
+
+  .contactWrapper>* {
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  .deleteBtn {
+    width: 75%;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: lightcoral;
+
+    margin-top: 2rem;
+  }
+
+
+  #reviewMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #reviewHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  .reviewWrapper>* {
+
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  .reviewWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+
+  }
+
+  .reviewDivider {
+    border-bottom: 2px solid white;
+    margin: 1rem;
+    width: 100%;
+  }
+
+  #adminMain {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .employeeWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+  }
+
+  .employeeWrapper>* {
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  #adminHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  .employeeWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffcc;
+    margin: 1rem;
+    border-radius: 10px;
+    border: solid 3px grey;
+  }
+
+  .employeeWrapper>* {
+    margin: 1rem 2rem 1rem 2rem
+  }
+
+  #createLink {
+    text-align: center;
+    padding: 0.5rem;
+    text-decoration: none;
+    width: 50%;
+    background-color: #1e6252;
+    color: white;
+    font-size: 1.2em;
+    box-shadow: 1px 1px 3px #000000;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #createLink:hover {
+    text-decoration: underline;
+    background-color: #194f42;
+  }
+
+  #createLink:active {
+    text-decoration: underline;
+    background-color: #1e6252
+  }
+
+  #createMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #createHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  #createForm {
+    padding: 1rem;
+    background-color: #ffffffcc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    width: 75%;
+  }
+
+  #createForm input {
+    margin-bottom: 1rem;
+    width: 75%;
+  }
+
+  #userPreview {
+    background-color: #ffffffcc;
+    border-radius: 5px;
+    margin: 1rem;
+    text-align: center;
+  }
+
+  #userPreview>* {
+    padding: 0 0.5rem 0 0.5rem;
+  }
+
+  #errorList {
+    margin: 1rem;
+    border-radius: 5px;
+  }
+
+  #createUser {
+    padding: 1rem;
+    margin: 0.5rem 0 2rem 0;
+    background-color: rgb(87, 229, 132);
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 75%;
+  }
+
+  #success {
+    text-align: center;
+    font-size: 1.2em;
+    color: darkgreen;
+  }
+}

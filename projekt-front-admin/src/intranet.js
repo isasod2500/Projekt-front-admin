@@ -1,47 +1,28 @@
 document.addEventListener("DOMContentLoaded", async () => {
     console.log(`DOM Loaded`)
-    await getAuthorised()
     await fetchEmployee()
 })
 
-async function getAuthorised() {
-    const token = localStorage.getItem("token");
-
-    const response = await fetch("http://127.0.0.1:3000/orders", {
-        method: "GET",
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
-    });
-
-    //Om något är fel med token, gå tillbaka till index.
-    if (!response.ok) {
-        window.location = `index.html`
-    }
-
-    const data = await response.json()
-
-    if (!token) {
-        console.log(`Åtkomst nekad`)
-        return;
-    }
-}
-
 async function fetchEmployee() {
     try {
-        const token = localStorage.getItem("token")
+        const token = localStorage.getItem("token");
+
         if (!token) {
-            console.log(`Åtkomst nekad`)
+            window.location = "index.html";
             return;
         }
-
-
-        const response = await fetch(`http://127.0.0.1:3000/intranet`, {
+        
+        const response = await fetch("http://127.0.0.1:3000/admin", {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`
             }
-        });
+        })
+
+        //Om något är fel med token, gå tillbaka till index.
+        if (!response.ok) {
+            window.location = `index.html`
+        }
 
         const data = await response.json();
         console.log(data)

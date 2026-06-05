@@ -41,15 +41,21 @@ async function fetchOrders() {
     pickedup.innerHTML = "";
 
     try {
+        //Fetch som samtidigt verifierar åtkomst. Vid misslyckad autentisering skickas användaren tillbaka till login.
         const token = localStorage.getItem("token");
         let db = await fetch(`http://127.0.0.1:3000/orders`, {
             headers: {
                 Authorization: `Beared ${token}`
             }
         })
+
+        //Om något är fel med token, gå tillbaka till index.
+        if (!db.ok) {
+            window.location = `index.html`
+        }
         let result = await db.json()
 
-        result.forEach(order => {
+        for (const order of result) {
             //Skapa div där beställningarna ska in. Anger IDt från databasen på button och diven
             let dishDiv = document.createElement("div")
             dishDiv.setAttribute("class", "dishDiv")
@@ -65,6 +71,7 @@ async function fetchOrders() {
             let cstmrEmail = document.createElement("p")
             let status = document.createElement("h3")
             let totalPrice = document.createElement("h3")
+            let pickupTime = document.createElement("h3")
 
             orderId.innerHTML = `Beställning: ${order._id}`
             dishDiv.appendChild(orderId)
@@ -80,6 +87,7 @@ async function fetchOrders() {
             totalPrice.innerHTML = `Summa: ${order.totalPrice}kr`
             dishDiv.appendChild(totalPrice)
 
+            //Message är inte obligatoriskt. Om det finns, appenda.
             if (order.message) {
                 let msg = document.createElement("p")
                 msg.setAttribute("class", "orderMsg")
@@ -91,11 +99,15 @@ async function fetchOrders() {
             cstmrPhone.innerHTML = `Telefon: ${order.phone}`
             cstmrEmail.innerHTML = `E-post:${order.email}`
 
+
             contact.appendChild(cstmrName)
             contact.appendChild(cstmrPhone)
             contact.appendChild(cstmrEmail)
             contact.setAttribute("class", "orderContact")
             dishDiv.appendChild(contact)
+
+            pickupTime.innerHTML = `Upphämtning: ${order.pickup}`
+            dishDiv.appendChild(pickupTime)
 
             status.innerHTML = `Status: ${order.status}`
             status.setAttribute("class", "orderStatus")
@@ -159,10 +171,10 @@ async function fetchOrders() {
                     dishDiv.style.backgroundColor = "green"
                     dishDiv.style.color = "#edeeee"
                 }
-
+               
             }
 
-        })
+        }
     } catch (err) {
         console.log(err)
     }
@@ -189,6 +201,7 @@ async function orderPending(event) {
 
     fetchOrders()
 }
+
 
 async function orderDone(event) {
     let doneBtn = event.target

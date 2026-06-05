@@ -3,23 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchContact()
 })
 
-
-async function getAuthorised() {
-    const token = localStorage.getItem("token");
-
-    const response = await fetch("http://127.0.0.1:3000/", {
-        method: "GET",
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
-    }
-    )
-    const data = await response.json()
-
-    console.log(data)
-}
-
-
+//Hämtar in kundkontakt. Kollar token samtidigt.
 async function fetchContact() {
     document.getElementById("contactMain").innerHTML = "";
     try {
@@ -84,6 +68,7 @@ async function fetchContact() {
     }
 }
 
+//Radera kontakt utefter IDt på knappen.
 async function deleteContact(id) {
     console.log(id)
 
@@ -95,6 +80,6 @@ async function deleteContact(id) {
     });
 
     const response = await db.json()
-   
+    //ladda om sidan
     await fetchContact()
 }

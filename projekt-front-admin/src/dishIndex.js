@@ -6,10 +6,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("createDish").addEventListener("click", gotoAdd)
 })
 
+//Knapp skickar till lägg till rätt-sida
 function gotoAdd() {
     window.location.href = `./dishAdd.html`
 }
 
+//Läs in meny
 async function fetchMenu() {
 
     document.getElementById("monday").innerHTML = "";
@@ -149,6 +151,7 @@ async function changePage(id) {
     window.location = `./dishEdit.html?id=${id}`
 }
 
+//Funktion raderar rätt från databas
 async function deleteDish(id) {
     console.log(id)
 

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("loginBtn").addEventListener("click", signIn)
 })
 
-
+//Funktion för att logga in.
 async function signIn(event) {
     event.preventDefault()
 

@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     await fetchReviews()
 })
 
+//Hämtar in recensioner
 async function fetchReviews() {
 
     reviewMain.innerHTML = "";
@@ -86,6 +87,7 @@ async function fetchReviews() {
     }
 }
 
+//Raderar recension
 async function deleteReview(id) {
     console.log(id)
     try {

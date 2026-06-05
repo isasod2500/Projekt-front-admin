@@ -3,8 +3,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     fetchEmployees()
 })
 
+//Hämta in anställda
 async function fetchEmployees() {
 
+    document.getElementById("userList").innerHTML = ""
     try {
 
         const token = localStorage.getItem("token");
@@ -21,10 +23,8 @@ async function fetchEmployees() {
             window.location = `index.html`
         }
 
-        console.log(token)
         const result = await response.json()
         const payload = JSON.parse(atob(token.split(".")[1]));
-        console.log(payload)
         const resultArray = result.result
 
         const adminMain = document.getElementById("adminMain")
@@ -48,6 +48,15 @@ async function fetchEmployees() {
             const employeeCreated = document.createElement("p")
             employeeCreated.setAttribute("class", "employeeCreated")
 
+            let deleteBtn = document.createElement("button")
+            deleteBtn.addEventListener("click", () => {
+                deleteEmployee(employee._id)
+            })
+            deleteBtn.setAttribute("class", "deleteBtn")
+            deleteBtn.style.backgroundColor = "lightred"
+            deleteBtn.textContent = `Radera konto`
+            deleteBtn.setAttribute("data-id", employee._id)
+
             employeeName.innerHTML = `${employee.surname} ${employee.firstname}`
 
             employeeUser.innerHTML = `Anv.namn: ${employee.username}`
@@ -68,11 +77,28 @@ async function fetchEmployees() {
             employeeWrapper.appendChild(employeeEmail)
             employeeWrapper.appendChild(employeeRole)
             employeeWrapper.appendChild(employeeCreated)
+            employeeWrapper.appendChild(deleteBtn)
 
-            adminMain.appendChild(employeeWrapper)
+            userList.appendChild(employeeWrapper)
         })
 
     } catch (err) {
         console.log(err)
     }
+}
+
+//Ta bort anställd från databas.
+async function deleteEmployee(id) {
+
+
+    let db = await fetch(`http://127.0.0.1:3000/delete/employee/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    });
+
+    const response = await db.json()
+   
+    await fetchEmployees()
 }

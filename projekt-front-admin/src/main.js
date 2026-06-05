@@ -61,7 +61,7 @@ async function signIn(event) {
         localStorage.setItem("token", result.token)
 
         const token = localStorage.getItem("token")
-        const protResult = await fetch("http:127.0.0.1:3000/", {
+        const protResult = await fetch("https://projekt-backend-s1gd.onrender.com/", {
             headers: {
                 Authorization: `Bearer ${token}`
             }

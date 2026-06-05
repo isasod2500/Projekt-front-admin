@@ -73,7 +73,7 @@ async function signIn(event) {
             throw new Error(`Inloggning misslyckades`)
         }
 
-        window.location.href = "/intranet"
+        window.location.href = "./intranet.html"
     } catch (err) {
         console.error(err)
     }

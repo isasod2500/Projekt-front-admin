@@ -10,7 +10,7 @@ async function fetchReviews() {
     try {
         const token = localStorage.getItem("token")
 
-        let db = await fetch("http://127.0.0.1:3000/review", {
+        let db = await fetch("https://projekt-backend-s1gd.onrender.com/review", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -91,7 +91,7 @@ async function fetchReviews() {
 async function deleteReview(id) {
     console.log(id)
     try {
-        let db = await fetch(`http://127.0.0.1:3000/delete/review/${id}`, {
+        let db = await fetch(`https://projekt-backend-s1gd.onrender.com/delete/review/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"

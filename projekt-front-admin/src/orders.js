@@ -188,7 +188,7 @@ async function orderPending(event) {
     let dishId = pendingBtn.dataset.id
 
     try {
-        let result = await fetch(`http://127.0.0.1:3000/orders/${dishId}`, {
+        let result = await fetch(`https://projekt-backend-s1gd.onrender.com/orders/${dishId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -209,7 +209,7 @@ async function orderDone(event) {
     let dishId = doneBtn.dataset.id
 
     try {
-        let result = await fetch(`http://127.0.0.1:3000/orders/${dishId}`, {
+        let result = await fetch(`https://projekt-backend-s1gd.onrender.com/orders/${dishId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -229,7 +229,7 @@ async function orderPickedup(event) {
     let dishId = pickedupBtn.dataset.id
 
     try {
-        let result = await fetch(`http://127.0.0.1:3000/orders/${dishId}`, {
+        let result = await fetch(`https://projekt-backend-s1gd.onrender.com/orders/${dishId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

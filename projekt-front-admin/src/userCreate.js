@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("createUser").addEventListener("click", createUser)
 
     const token = localStorage.getItem("token")
-    let db = await fetch(`http://127.0.0.1:3000/`, {
+    let db = await fetch(`https://projekt-backend-s1gd.onrender.com/`, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -96,7 +96,7 @@ async function createUser(event) {
             admin: role,
         }
 
-        let response = await fetch("http://127.0.0.1:3000/register", {
+        let response = await fetch("https://projekt-backend-s1gd.onrender.com/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -36,7 +36,7 @@ async function createDish(event) {
     }
 
     try {
-        let db = await fetch("http://127.0.0.1:3000/add", {
+        let db = await fetch("https://projekt-backend-s1gd.onrender.com/add", {
             method: "POST",
             body: formData
         });

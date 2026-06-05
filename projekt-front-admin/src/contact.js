@@ -8,7 +8,7 @@ async function fetchContact() {
     document.getElementById("contactMain").innerHTML = "";
     try {
         const token = localStorage.getItem("token")
-        let db = await fetch("http://127.0.0.1:3000/contact", {
+        let db = await fetch("https://projekt-backend-s1gd.onrender.com/contact", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -72,7 +72,7 @@ async function fetchContact() {
 async function deleteContact(id) {
     console.log(id)
 
-    let db = await fetch(`http://127.0.0.1:3000/delete/contact/${id}`, {
+    let db = await fetch(`https://projekt-backend-s1gd.onrender.com/delete/contact/${id}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"

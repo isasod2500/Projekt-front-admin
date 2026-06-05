@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 async function getAuthorised() {
     const token = localStorage.getItem("token");
 
-    const response = await fetch("http://127.0.0.1:3000/orders", {
+    const response = await fetch("https://projekt-backend-s1gd.onrender.comorders", {
         method: "GET",
         headers: {
             Authorization: `Bearer ${token}`
@@ -43,7 +43,7 @@ async function fetchOrders() {
     try {
         //Fetch som samtidigt verifierar åtkomst. Vid misslyckad autentisering skickas användaren tillbaka till login.
         const token = localStorage.getItem("token");
-        let db = await fetch(`http://127.0.0.1:3000/orders`, {
+        let db = await fetch(`https://projekt-backend-s1gd.onrender.com/orders`, {
             headers: {
                 Authorization: `Beared ${token}`
             }

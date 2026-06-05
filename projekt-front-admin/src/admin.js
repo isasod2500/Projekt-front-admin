@@ -11,7 +11,7 @@ async function fetchEmployees() {
 
         const token = localStorage.getItem("token");
 
-        const response = await fetch("http://127.0.0.1:3000/admin", {
+        const response = await fetch("https://projekt-backend-s1gd.onrender.com/admin", {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -91,7 +91,7 @@ async function fetchEmployees() {
 async function deleteEmployee(id) {
 
 
-    let db = await fetch(`http://127.0.0.1:3000/delete/employee/${id}`, {
+    let db = await fetch(`https://projekt-backend-s1gd.onrender.com/delete/employee/${id}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"

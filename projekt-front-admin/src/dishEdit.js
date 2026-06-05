@@ -14,7 +14,7 @@ async function fetchOrder() {
 
     try {
         const token = localStorage.getItem("token")
-        let db = await fetch(`http://127.0.0.1:3000/add/${id}`, {
+        let db = await fetch(`https://projekt-backend-s1gd.onrender.com/add/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -84,7 +84,7 @@ async function updateQuery(event) {
     }
 
     try {
-        let db = await fetch(`http://127.0.0.1:3000/add/${id}`, {
+        let db = await fetch(`https://projekt-backend-s1gd.onrender.com/add/${id}`, {
             method: "PUT",
             body: formData
         });

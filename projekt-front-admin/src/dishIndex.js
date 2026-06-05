@@ -23,7 +23,7 @@ async function fetchMenu() {
     document.getElementById("sunday").innerHTML = "";
     try {
         const token = localStorage.getItem("token");
-        let db = await fetch("http://127.0.0.1:3000/add", {
+        let db = await fetch("https://projekt-backend-s1gd.onrender.com/add", {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -155,7 +155,7 @@ async function changePage(id) {
 async function deleteDish(id) {
     console.log(id)
 
-    let db = await fetch(`http://127.0.0.1:3000/delete/dish/${id}`, {
+    let db = await fetch(`https://projekt-backend-s1gd.onrender.com/delete/dish/${id}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"

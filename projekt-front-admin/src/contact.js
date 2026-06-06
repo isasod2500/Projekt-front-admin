@@ -20,10 +20,6 @@ async function fetchContact() {
             window.location = `index.html`
         }
 
-        console.log(result)
-        console.log(typeof result)
-        console.log(Array.isArray(result));
-
         let contactMain = document.getElementById("contactMain")
         result.forEach(contact => {
 
@@ -70,7 +66,7 @@ async function fetchContact() {
 
 //Radera kontakt utefter IDt på knappen.
 async function deleteContact(id) {
-    console.log(id)
+
 
     let db = await fetch(`https://projekt-backend-s1gd.onrender.com/delete/contact/${id}`, {
         method: "DELETE",

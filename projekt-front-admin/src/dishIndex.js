@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
-    console.log(`DOM loaded`)
+
     await fetchMenu()
 
     document.getElementById("createDish").addEventListener("click", gotoAdd)
@@ -46,7 +46,7 @@ async function fetchMenu() {
         let sundayDiv = document.getElementById("sunday")
 
 
-        console.log(result)
+
         result.forEach(dish => {
             let dishWeekday = dish.weekday
             let dishesDiv = document.createElement("div")
@@ -154,7 +154,7 @@ async function changePage(id) {
 
 //Funktion raderar rätt från databas
 async function deleteDish(id) {
-    console.log(id)
+
 
     let db = await fetch(`https://projekt-backend-s1gd.onrender.com/delete/dish/${id}`, {
         method: "DELETE",

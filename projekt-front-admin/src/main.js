@@ -61,13 +61,13 @@ async function signIn(event) {
         localStorage.setItem("token", result.token)
 
         const token = localStorage.getItem("token")
-        const protResult = await fetch("https://projekt-backend-s1gd.onrender.com/", {
+        const protResult = await fetch("https://projekt-backend-s1gd.onrender.com/intranet", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         });
 
-        const protData = protResult.json()
+        const protData = await protResult.json()
 
         if (!protResult.ok) {
             throw new Error(`Inloggning misslyckades`)

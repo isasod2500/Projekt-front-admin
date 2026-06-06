@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 async function getAuthorised() {
     const token = localStorage.getItem("token");
 
-    const response = await fetch("https://projekt-backend-s1gd.onrender.comorders", {
+    const response = await fetch("https://projekt-backend-s1gd.onrender.com/orders", {
         method: "GET",
         headers: {
             Authorization: `Bearer ${token}`

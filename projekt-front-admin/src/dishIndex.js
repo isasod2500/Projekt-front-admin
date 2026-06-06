@@ -91,9 +91,10 @@ async function fetchMenu() {
 
             adminDishDiv.appendChild(dishHeader)
             if (dish.image) {
+                const imageUrl = `https://projekt-backend-s1gd.onrender.com/uploads/${dish.image}`;
                 let dishImage = document.createElement("div")
                 dishImage.setAttribute("class", "dishImage")
-                dishImage.innerHTML += `<img src="${dish.image}">`
+                dishImage.innerHTML = `<img src="${imageUrl}">`;
                 adminDishDiv.appendChild(dishImage)
             }
             adminDishDiv.appendChild(dishIngrdnts)
@@ -163,6 +164,6 @@ async function deleteDish(id) {
     });
 
     const response = await db.json()
-   
+
     await fetchMenu()
 }

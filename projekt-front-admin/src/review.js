@@ -21,7 +21,7 @@ async function fetchReviews() {
         }
         let result = await db.json()
 
-        console.log(result)
+
 
         let reviewMain = document.getElementById("reviewMain")
         result.forEach(review => {
@@ -89,7 +89,7 @@ async function fetchReviews() {
 
 //Raderar recension
 async function deleteReview(id) {
-    console.log(id)
+
     try {
         let db = await fetch(`https://projekt-backend-s1gd.onrender.com/delete/review/${id}`, {
             method: "DELETE",

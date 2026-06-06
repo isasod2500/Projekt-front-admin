@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    console.log(`DOM LOADED`)
+  
     await getAuthorised()
     await fetchOrders()
 })
@@ -22,7 +22,7 @@ async function getAuthorised() {
     const data = await response.json()
 
     if (!token) {
-        console.log(`Åtkomst nekad`)
+
         return;
     }
 }

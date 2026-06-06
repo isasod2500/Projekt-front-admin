@@ -26,7 +26,7 @@ async function fetchOrder() {
         }
 
         const result = await db.json()
-        console.log(result)
+   
 
 
         let dishnameInput = document.getElementById("dishname")
@@ -49,7 +49,7 @@ async function fetchOrder() {
 
 async function updateQuery(event) {
     event.preventDefault()
-    console.log("Uppdaterar")
+
     let params = new URLSearchParams(document.location.search)
     let id = params.get("id")
 

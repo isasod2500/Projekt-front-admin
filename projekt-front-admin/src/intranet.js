@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    console.log(`DOM Loaded`)
+
     await fetchEmployee()
 })
 
@@ -25,7 +25,7 @@ async function fetchEmployee() {
         }
 
         const data = await response.json();
-        console.log(data)
+
 
         const payload = JSON.parse(atob(token.split(".")[1]));
 

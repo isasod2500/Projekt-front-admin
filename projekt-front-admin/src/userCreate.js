@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    console.log(`DOM Loaded`)
+
 
     document.getElementById("firstname").addEventListener("input", previewUser)
     document.getElementById("surname").addEventListener("input", previewUser)

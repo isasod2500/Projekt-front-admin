@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log(`Dom loaded`)
+
 
     document.getElementById("loginBtn").addEventListener("click", signIn)
 })
@@ -45,7 +45,7 @@ async function signIn(event) {
         if (!response.ok) {
             const errorData = await response.json();
 
-            console.log(errorData);
+    
 
             errorData.errors.forEach(error => {
                 let errorLine = document.createElement("li");

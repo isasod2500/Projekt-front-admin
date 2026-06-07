@@ -184,12 +184,19 @@ main {
 
   #ordersMain {
     display: flex;
-    color: white;
+    color: black;
   }
 
-  #ordersMain h2,
-  h3 {
-    text-align: center;
+  #ordersMainHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  .statusHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
   }
 
   #done {
@@ -731,13 +738,19 @@ main {
 
   #ordersMain {
     display: flex;
-    color: white;
+    color: black;
   }
 
+  #ordersMainHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
 
-  #ordersMain h2,
-  h3 {
-    text-align: center;
+  .statusHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
   }
 
   #done {
@@ -1329,13 +1342,19 @@ main {
 
   #ordersMain {
     display: flex;
-    color: white;
+
   }
 
+  #ordersMainHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
 
-  #ordersMain h2,
-  h3 {
-    text-align: center;
+  .statusHeader {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 0.5rem;
   }
 
   #done {

@@ -123,7 +123,7 @@ async function fetchOrders() {
                 let button = document.createElement("button")
                 button.setAttribute("class", "markPending")
                 button.textContent = `Markera som Tillagas`
-                button.style.backgroundColor = "orange"
+                button.style.backgroundColor = "#00B300"
                 button.setAttribute("data-id", order._id)
                 button.addEventListener("click", orderPending)
 
@@ -168,7 +168,7 @@ async function fetchOrders() {
                 if (timePassed === false) {
                     pickedup.appendChild(dishDiv)
                     status.innerHTML = `Upphämtad`
-                    dishDiv.style.backgroundColor = "green"
+                    dishDiv.style.backgroundColor = "#006100"
                     dishDiv.style.color = "#edeeee"
                 }
                

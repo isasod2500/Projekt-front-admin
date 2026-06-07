@@ -94,7 +94,7 @@ async function fetchMenu() {
                 const imageUrl = `https://projekt-backend-s1gd.onrender.com/uploads/${dish.image}`;
                 let dishImage = document.createElement("div")
                 dishImage.setAttribute("class", "dishImage")
-                dishImage.innerHTML = `<img src="${imageUrl}">`;
+                dishImage.innerHTML = `<img src="${imageUrl}" alt="${dish.dishname}">`;
                 adminDishDiv.appendChild(dishImage)
             }
             adminDishDiv.appendChild(dishIngrdnts)

@@ -46,7 +46,8 @@ async function fetchReviews() {
 
             let reviewSent = document.createElement("h4")
             reviewSent.setAttribute("class", "reviewSent")
-            reviewSent.innerHTML = `Inskickat: ${review.created}`
+            let reviewDate = review.created.slice(0,10)
+            reviewSent.innerHTML = `Inskickat: ${reviewDate}`
 
             let reviewAnswer = document.createElement("p")
             reviewAnswer.setAttribute("class", "reviewAnswer")

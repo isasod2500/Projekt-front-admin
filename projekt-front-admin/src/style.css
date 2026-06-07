@@ -421,6 +421,8 @@ main {
   .reviewWrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #ffffffcc;
     margin: 1rem;
     border-radius: 10px;
@@ -1013,8 +1015,11 @@ main {
   }
 
   .reviewWrapper {
+    max-width: 65ch;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #ffffffcc;
     margin: 1rem;
     border-radius: 10px;
@@ -1025,6 +1030,12 @@ main {
     border-bottom: 2px solid white;
     margin: 1rem;
     width: 100%;
+  }
+
+  #reviewDisclaimer {
+    background-color: #ffffffcc;
+    border-radius: 5px;
+    padding: 0.5rem;
   }
 
   #adminMain {
@@ -1649,8 +1660,11 @@ main {
   }
 
   .reviewWrapper {
+    max-width: 65ch;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #ffffffcc;
     margin: 1rem;
     border-radius: 10px;
@@ -1662,6 +1676,12 @@ main {
     border-bottom: 2px solid white;
     margin: 1rem;
     width: 100%;
+  }
+
+  #reviewDisclaimer {
+    background-color: #ffffffcc;
+    border-radius: 5px;
+    padding: 0.5rem;
   }
 
   #adminMain {
